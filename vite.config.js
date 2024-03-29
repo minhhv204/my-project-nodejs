@@ -5,6 +5,17 @@ export default defineConfig({
   server: {
     port: 8000,
   },
+
+  plugins: [
+    ...VitePluginNode({
+      adapter: "express",
+      appPath: "./server.html",
+      exportName: "viteNodeApp",
+      initAppOnBoot: false,
+      tsCompiler: "esbuild",
+      swcOptions: {},
+    }),
+  ],
   build: {
     rollupOptions: {
         input: {
@@ -12,16 +23,5 @@ export default defineConfig({
         },
     },
 },
-  plugins: [
-    ...VitePluginNode({
-      adapter: "express",
-      appPath: "./index.js",
-      exportName: "viteNodeApp",
-      initAppOnBoot: false,
-      tsCompiler: "esbuild",
-      swcOptions: {},
-    }),
-  ],
- 
   optimizeDeps: {},
 });
