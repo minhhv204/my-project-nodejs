@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 app.use(express.json()); // cho JSON payloads
 app.use(express.urlencoded({ extended: true })); // cho URL-encoded payloads
-connectMongoDB(process.env.DB_URI);
+connectMongoDB("mongodb://127.0.0.1:27017/db_nodejs");
 app.use("/books",bookRouter);
 app.use("/auth",authRouter);
 app.use("/product",productRouter);
