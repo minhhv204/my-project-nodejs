@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
         input: {
-            main: resolve(__dirname, "server.html"),
+            main: resolve(__dirname, "http://localhost:8000/"),
         },
     },
 },
