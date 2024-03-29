@@ -5,6 +5,13 @@ export default defineConfig({
   server: {
     port: 8000,
   },
+  build: {
+    rollupOptions: {
+        input: {
+            main: resolve(__dirname, "./index.js"),
+        },
+    },
+},
   plugins: [
     ...VitePluginNode({
       adapter: "express",
@@ -15,12 +22,6 @@ export default defineConfig({
       swcOptions: {},
     }),
   ],
-  build: {
-    rollupOptions: {
-        input: {
-            main: resolve(__dirname, "./index.js"),
-        },
-    },
-},
+ 
   optimizeDeps: {},
 });
