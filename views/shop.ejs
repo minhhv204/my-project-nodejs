@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-4  ">
+        <div class="container">
+          <a class="navbar-brand" href="/">Trang chủ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/shop">Sản phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addnew">Thêm sản phẩm</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+        <div class="d-flex justify-content-around"> 
+            <% for (let product of products) { %> 
+                <article class="card product-item"> 
+                    <header class="card__header"> 
+                        <h1 class="product__title"><a href="/product/<%= product.id %>"><%= product.title %></a></h1>
+                    </header> 
+                    <div class="card__image"> 
+                        <img src="images/<%= product.imageURL %>" alt="A Book"> 
+                    </div> 
+                    <div class="card__content"> 
+                        <h2 class="product__price">$<%= product.price %></h2> 
+                        <p class="product__description"><%=product.description %></p> 
+                    </div> 
+                    <div class="card__actions"> 
+                        <button class="btn btn-primary ">Add to Cart</button> 
+                    </div> 
+                </article> 
+            <% } %> 
+        </div>
+</body>
+</html>
