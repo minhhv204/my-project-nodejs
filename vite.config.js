@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
         input: {
-            main: resolve(__dirname, "./index.js"),
+            main: resolve(__dirname, "./server.html"),
         },
     },
 },
