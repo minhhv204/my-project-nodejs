@@ -15,12 +15,13 @@ export default defineConfig({
   plugins: [
     ...VitePluginNode({
       adapter: "express",
-      appPath: "./server.html",
+      appPath: "./index.js",
       exportName: "viteNodeApp",
       initAppOnBoot: false,
       tsCompiler: "esbuild",
       swcOptions: {},
     }),
   ],
+ 
   optimizeDeps: {},
 });
