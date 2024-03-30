@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json()); // cho JSON payloads
 const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true })); // cho URL-encoded payloads
-connectMongoDB(process.env.DB_URI);
+connectMongoDB("mongodb+srv://minhhv204:0394494851@cluster0.bdiders.mongodb.net/db_nodejs?retryWrites=true&w=majority&appName=Cluster0");
 app.use("/books",bookRouter);
 app.use("/auth",authRouter);
 app.use("/product",productRouter);
