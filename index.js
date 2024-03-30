@@ -10,7 +10,7 @@ const router = Router();
 dotenv.config();
 const app = express();
 app.use(express.json()); // cho JSON payloads
-const PORT = process.env.PORT || 3000;
+const PORT = 3000 ;
 app.use(express.urlencoded({ extended: true })); // cho URL-encoded payloads
 connectMongoDB("mongodb+srv://hminh0555:0394494851@cluster0.hkor2zg.mongodb.net/db_nodejs");
 app.use("/books",bookRouter);
