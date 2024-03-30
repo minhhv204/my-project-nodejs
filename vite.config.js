@@ -2,10 +2,13 @@ import { defineConfig } from "vite";
 import { VitePluginNode } from "vite-plugin-node";
 import { resolve } from "path";
 export default defineConfig({
+  server: {
+    port: 8000,
+  },
   build: {
     rollupOptions: {
         input: {
-            main: resolve(__dirname, "./index.html"),
+            main: resolve(__dirname, "./index.js"),
         },
     },
 },
