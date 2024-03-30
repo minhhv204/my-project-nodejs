@@ -10,6 +10,7 @@ const router = Router();
 dotenv.config();
 const app = express();
 app.use(express.json()); // cho JSON payloads
+const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true })); // cho URL-encoded payloads
 connectMongoDB("mongodb://127.0.0.1:27017/db_nodejs");
 app.use("/books",bookRouter);
@@ -17,4 +18,4 @@ app.use("/auth",authRouter);
 app.use("/product",productRouter);
 app.use("/category",categoriesRouter);
 app.use("/",productRouter)
-export const viteNodeApp = app;
+app.listen(PORT, ()=> console.log("Server is running on port 3000"));
